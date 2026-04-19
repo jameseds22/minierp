@@ -1,0 +1,180 @@
+:root {
+  --bg: #eef3f8;
+  --surface: #ffffff;
+  --primary: #0f4c81;
+  --accent: #0a7c66;
+  --text: #1f2937;
+  --muted: #64748b;
+  --danger: #c0392b;
+  --border: #dbe5ef;
+  --danger-soft: rgba(192, 57, 43, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top right, rgba(15, 76, 129, 0.1), transparent 28%),
+    linear-gradient(180deg, #f7fafc 0%, #eef3f8 100%);
+}
+
+.shell {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08);
+}
+
+.grid {
+  display: grid;
+  gap: 20px;
+}
+
+.grid-2 {
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+.toolbar {
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+input, select, button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  font-size: 14px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(15, 76, 129, 0.12);
+}
+
+button {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+button.secondary {
+  background: var(--accent);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  text-align: left;
+  padding: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.error {
+  color: var(--danger);
+  font-size: 13px;
+}
+
+.pill {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(10, 124, 102, 0.12);
+  color: var(--accent);
+}
+
+.masked-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.masked-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(135deg, rgba(15, 76, 129, 0.08), transparent 45%),
+    radial-gradient(circle at bottom right, rgba(10, 124, 102, 0.10), transparent 35%);
+  pointer-events: none;
+}
+
+.masked-card > * {
+  position: relative;
+}
+
+.top-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.top-actions button {
+  width: auto;
+  padding-inline: 16px;
+}
+
+.field-error {
+  border-color: var(--danger) !important;
+  background: var(--danger-soft);
+  box-shadow: 0 0 0 3px rgba(192, 57, 43, 0.08);
+}
+
+.field-help {
+  margin-top: -10px;
+  font-size: 12px;
+  color: var(--danger);
+}
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.48);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 1000;
+}
+
+.modal {
+  width: min(480px, 100%);
+  background: var(--surface);
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.22);
+  padding: 24px;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: 16px;
+}
+
+.modal-actions button {
+  width: auto;
+  min-width: 120px;
+}

@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: mini-erp-api
+    runtime: docker
+    rootDir: backend
+    envVars:
+      - key: DB_URL
+        sync: false
+      - key: DB_USERNAME
+        sync: false
+      - key: DB_PASSWORD
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+  - type: static
+    name: mini-erp-web
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist/mini-erp-frontend/browser
