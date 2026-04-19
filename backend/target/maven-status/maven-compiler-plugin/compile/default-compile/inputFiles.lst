@@ -9,10 +9,13 @@ C:\proyectos\Nueva carpeta\backend\src\main\java\com\minierp\controller\Quotatio
 C:\proyectos\Nueva carpeta\backend\src\main\java\com\minierp\controller\UserController.java
 C:\proyectos\Nueva carpeta\backend\src\main\java\com\minierp\controller\WarehouseController.java
 C:\proyectos\Nueva carpeta\backend\src\main\java\com\minierp\dto\ApiErrorResponse.java
+C:\proyectos\Nueva carpeta\backend\src\main\java\com\minierp\dto\CreateUserRequest.java
 C:\proyectos\Nueva carpeta\backend\src\main\java\com\minierp\dto\InventoryMovementRequest.java
 C:\proyectos\Nueva carpeta\backend\src\main\java\com\minierp\dto\InventoryResponse.java
 C:\proyectos\Nueva carpeta\backend\src\main\java\com\minierp\dto\LoginRequest.java
 C:\proyectos\Nueva carpeta\backend\src\main\java\com\minierp\dto\LoginResponse.java
+C:\proyectos\Nueva carpeta\backend\src\main\java\com\minierp\dto\QuickCreateClientRequest.java
+C:\proyectos\Nueva carpeta\backend\src\main\java\com\minierp\dto\QuickCreateProductRequest.java
 C:\proyectos\Nueva carpeta\backend\src\main\java\com\minierp\dto\QuotationItemRequest.java
 C:\proyectos\Nueva carpeta\backend\src\main\java\com\minierp\dto\QuotationRequest.java
 C:\proyectos\Nueva carpeta\backend\src\main\java\com\minierp\entity\Category.java
@@ -50,4 +53,6 @@ C:\proyectos\Nueva carpeta\backend\src\main\java\com\minierp\service\AuthService
 C:\proyectos\Nueva carpeta\backend\src\main\java\com\minierp\service\CatalogServices.java
 C:\proyectos\Nueva carpeta\backend\src\main\java\com\minierp\service\CrudService.java
 C:\proyectos\Nueva carpeta\backend\src\main\java\com\minierp\service\InventoryService.java
+C:\proyectos\Nueva carpeta\backend\src\main\java\com\minierp\service\QuickCreateService.java
 C:\proyectos\Nueva carpeta\backend\src\main\java\com\minierp\service\QuotationService.java
+C:\proyectos\Nueva carpeta\backend\src\main\java\com\minierp\service\UserManagementService.java

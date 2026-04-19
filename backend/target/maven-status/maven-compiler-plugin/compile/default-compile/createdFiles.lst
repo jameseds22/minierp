@@ -1,9 +1,11 @@
 com\minierp\repository\RoleRepository.class
 com\minierp\service\AuthService.class
 com\minierp\repository\CategoryRepository.class
+com\minierp\dto\CreateUserRequest.class
 com\minierp\controller\ProductController.class
 com\minierp\entity\Warehouse.class
 com\minierp\entity\Product.class
+com\minierp\dto\QuickCreateClientRequest.class
 com\minierp\MiniErpApplication.class
 com\minierp\repository\QuotationRepository.class
 com\minierp\service\QuotationService.class
@@ -22,6 +24,8 @@ com\minierp\dto\QuotationItemRequest.class
 com\minierp\config\DataInitializer.class
 com\minierp\entity\QuotationDetail.class
 com\minierp\exception\GlobalExceptionHandler.class
+com\minierp\service\UserManagementService.class
+com\minierp\dto\QuickCreateProductRequest.class
 com\minierp\controller\UserController.class
 com\minierp\controller\AuthController.class
 com\minierp\repository\WarehouseRepository.class
@@ -52,4 +56,5 @@ com\minierp\security\UserDetailsServiceImpl.class
 com\minierp\repository\InventoryMovementRepository.class
 com\minierp\repository\InventoryRepository.class
 com\minierp\entity\RoleName.class
+com\minierp\service\QuickCreateService.class
 com\minierp\service\InventoryService.class
