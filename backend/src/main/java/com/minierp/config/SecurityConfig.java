@@ -43,10 +43,13 @@ public class SecurityConfig {
                 .cors(Customizer.withDefaults())
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/api/auth/**").permitAll()
-                        .requestMatchers(HttpMethod.GET, "/api/**").authenticated()
-                        .requestMatchers("/api/**").hasAnyRole("ADMIN", "VENDEDOR")
-                        .anyRequest().authenticated())
+                    .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll() // 🔥 importante
+                    .requestMatchers("/api/auth/**").permitAll()
+                    .requestMatchers("/auth/**").permitAll() // por si acaso
+                    .requestMatchers(HttpMethod.GET, "/api/**").authenticated()
+                    .requestMatchers("/api/**").hasAnyRole("ADMIN", "VENDEDOR")
+                    .anyRequest().authenticated()
+                )
                 .authenticationProvider(authenticationProvider())
                 .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
         return http.build();
@@ -73,11 +76,23 @@ public class SecurityConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(List.of("http://localhost:4200", "https://minierp-532m8g6iz-jameseds22s-projects.vercel.app"));
-        configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
+
+        configuration.setAllowedOrigins(List.of(
+            "http://localhost:4200",
+            "https://minierp-6xqt8hqcx-jameseds22s-projects.vercel.app"
+        ));
+
+        configuration.setAllowedMethods(List.of(
+            "GET", "POST", "PUT", "DELETE", "OPTIONS"
+        ));
+
         configuration.setAllowedHeaders(List.of("*"));
+
+        configuration.setAllowCredentials(true); // 🔥 CLAVE
+
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", configuration);
+
         return source;
     }
 }
