@@ -48,6 +48,7 @@ public class SecurityConfig {
                     //.requestMatchers("/auth/**").permitAll() // por si acaso
                     .requestMatchers(HttpMethod.GET, "/api/**").authenticated()
                     .requestMatchers("/api/**").hasAnyRole("ADMIN", "VENDEDOR")
+                    .requestMatchers("/").permitAll()
                     .anyRequest().authenticated()
                 )
                 .authenticationProvider(authenticationProvider())
