@@ -13,10 +13,10 @@ import { AuthService } from '../../core/services/auth.service';
       <h1>Acceso al ERP</h1>
       <p>Ingresa con tu usuario para gestionar stock y cotizaciones.</p>
 
-      <form [formGroup]="form" (ngSubmit)="submit()" class="grid">
+      <form [formGroup]="form" method="post" novalidate (submit)="submit($event)" class="grid">
         <input formControlName="username" placeholder="Usuario" />
-        <input formControlName="password" type="password" placeholder="Contraseña" />
-        <button type="submit" [disabled]="form.invalid || loading">Iniciar sesión</button>
+        <input formControlName="password" type="password" placeholder="Contrasena" />
+        <button type="submit" [disabled]="form.invalid || loading">Iniciar sesion</button>
       </form>
 
       <p class="error" *ngIf="error">{{ error }}</p>
@@ -35,7 +35,8 @@ export class LoginComponent {
 
   constructor(private fb: FormBuilder, private authService: AuthService, private router: Router) {}
 
-  submit() {
+  submit(event?: Event) {
+    event?.preventDefault();
     if (this.form.invalid) {
       return;
     }
@@ -46,7 +47,7 @@ export class LoginComponent {
       next: () => this.router.navigate(['/']),
       error: () => {
         this.loading = false;
-        this.error = 'No se pudo iniciar sesión';
+        this.error = 'No se pudo iniciar sesion';
       }
     });
   }
