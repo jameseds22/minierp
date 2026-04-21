@@ -16,8 +16,13 @@ public class AuthController {
         this.authService = authService;
     }
 
-    @PostMapping("/login")
+    /* @PostMapping("/login")
     public LoginResponse login(@Valid @RequestBody LoginRequest request) {
         return authService.login(request);
-    }
+    }*/
+
+        @GetMapping("/login")
+public String test() {
+    return "Esto es GET";
+}
 }

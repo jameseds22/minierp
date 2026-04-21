@@ -29,7 +29,6 @@ export class AuthService {
     this.currentUser.set(null);
     this.router.navigate(['/login']);
   }
-
   token() {
     return localStorage.getItem(this.tokenKey);
   }
